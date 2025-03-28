@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const { access_token } = await loginApi({ username, password });
     setToken(access_token);
     localStorage.setItem("token", access_token);
-    Cookies.set("token", access_token, { secure: true, sameSite: "lax" });
+    Cookies.set("token", access_token, { secure: false, sameSite: "lax" });
     const userData = await getProfile();
     setUser(userData);
     router.push("/");
@@ -50,7 +50,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const { access_token } = await registerApi({ username, password });
     setToken(access_token);
     localStorage.setItem("token", access_token);
-    Cookies.set("token", access_token, { secure: true, sameSite: "lax" });
+    Cookies.set("token", access_token, { secure: false, sameSite: "lax" });
     const userData = await getProfile();
     setUser(userData);
     router.push("/");

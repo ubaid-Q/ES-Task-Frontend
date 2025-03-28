@@ -3,8 +3,6 @@ import axios from "axios";
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 
 export const login = async (credentials: { username: string; password: string }) => {
-  console.log({ credentials });
-
   const res = await axios.post(`${API_BASE}/auth/login`, credentials);
   return res.data;
 };
