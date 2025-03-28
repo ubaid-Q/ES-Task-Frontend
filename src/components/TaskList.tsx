@@ -153,7 +153,7 @@ const TaskList: React.FC = () => {
                 )}
               </div>
               <div className="mt-4 flex gap-4">
-                {task.createdBy && user.id === task.createdBy?.id && (
+                {task.createdBy && user?.id === task.createdBy?.id && (
                   <>
                     <Link href={`/tasks/${task.id}/edit`}>
                       <button className="bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg shadow-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400">
