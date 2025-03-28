@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Task Management Frontend
 
-## Getting Started
+A dynamic and responsive **Task Management Application** built with **Next.js**, providing users with intuitive interfaces for task creation, assignment, and real-time updates.
 
-First, run the development server:
+---
+
+## 📋 Table of Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation & Setup](#installation--setup)
+- [Environment Variables](#environment-variables)
+- [Running the Application](#running-the-application)
+- [Available Pages](#available-pages)
+- [Real-Time Notifications](#real-time-notifications)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## ✅ Features
+
+- **Landing Page (/)**: Welcoming interface introducing the application.
+- **Authentication**: Secure login and registration forms for user access.
+- **Dashboard**: Comprehensive view of tasks created by or assigned to the authenticated user.
+- **Task Management**: Authenticated users can create, edit, and delete tasks.
+- **Real-Time Updates**: Immediate task updates with notification sounds and toast messages upon changes.
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend Framework**: [Next.js](https://nextjs.org/)
+- **State Management**: React Context API
+- **Styling**: Tailwind CSS
+- **Real-Time Communication**: Socket.IO
+- **Notifications**: React-Toastify
+
+---
+
+## 🔧 Installation & Setup
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/ubaid-Q/ES-Task-Frontend.git
+   cd ES-Task-Frontend
+   ```
+
+2. **Install Dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Environment Variables**:
+
+   - Rename \`.env.example\` to \`.env\`:
+
+     ```bash
+     cp .env.example ..env
+     ```
+
+   - Update the \`.env\` file with appropriate values:
+
+     ```env
+     NEXT_PUBLIC_API_URL=http://localhost:4000
+     NEXT_PUBLIC_SOCKET_URL=ws://localhost:4000
+     ```
+
+---
+
+## 🚀 Running the Application
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Access the application at \`http://localhost:3000\`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 Available Pages
 
-## Learn More
+- **Landing Page (\`/\`)**: Introduction to the application.
+- **Authentication**:
+  - \`GET /login\`: User login form.
+  - \`GET /register\`: User registration form.
+- **Dashboard (\`/dashboard\`)**: Displays tasks created by or assigned to the authenticated user.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔔 Real-Time Notifications
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The application utilizes Socket.IO for real-time task updates:
 
-## Deploy on Vercel
+- **Notifications**: Upon task updates, a notification sound plays, and a toast message appears.
+- **Immediate Task Updates**: Task list reflects changes instantly without requiring a page refresh.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request with your enhancements.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
