@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
-import { login as loginApi, getProfile, register as registerApi } from "../api/auth";
+import { login as loginApi, getProfile, register as registerApi, logoutApi } from "../api/auth";
 
 interface AuthContextType {
   user: any;
@@ -56,12 +56,19 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     router.push("/");
   };
 
-  const logout = () => {
-    setUser(null);
-    setToken(null);
-    localStorage.removeItem("token");
-    Cookies.remove("token");
-    router.push("/auth/login");
+  const logout = async () => {
+    try {
+      if (token) {
+        await logoutApi(token);
+      }
+    } catch (error) {
+    } finally {
+      setUser(null);
+      setToken(null);
+      localStorage.removeItem("token");
+      Cookies.remove("token");
+      router.push("/auth/login");
+    }
   };
 
   return <AuthContext.Provider value={{ user, token, login, register, logout }}>{children}</AuthContext.Provider>;

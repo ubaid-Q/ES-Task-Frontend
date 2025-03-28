@@ -22,7 +22,6 @@ const RegisterPage: React.FC = () => {
       await register(username, password);
       router.push("/");
     } catch (error: any) {
-      console.error("Registration error:", error);
       setErrorMsg(error.response?.data?.message || "Registration failed. Please try again.");
       setLoading(false);
     }

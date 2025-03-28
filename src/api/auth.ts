@@ -12,6 +12,11 @@ export const register = async (credentials: { username: string; password: string
   return res.data;
 };
 
+export const logoutApi = async (token: string) => {
+  const res = await axios.post(`${API_BASE}/auth/logout`, {}, { headers: { Authorization: `Bearer ${token}` } });
+  return res.data;
+};
+
 export const getProfile = async () => {
   const token = localStorage.getItem("token");
   const res = await axios.get(`${API_BASE}/users/profile`, {

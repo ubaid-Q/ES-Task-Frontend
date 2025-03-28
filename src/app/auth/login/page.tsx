@@ -22,7 +22,6 @@ const LoginPage: React.FC = () => {
       await login(username, password);
       router.push("/dashboard");
     } catch (error: any) {
-      console.error("Login error:", error);
       setErrorMsg(
         error.response?.data?.message || "Login failed. Please try again."
       );
